@@ -27,10 +27,10 @@ public class Option2Activity extends AppCompatActivity {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 if(sensorEvent.values[0]<sensor.getMaximumRange()){
-                    getWindow().getDecorView().setBackgroundColor(Color.GRAY);
+                    getWindow().getDecorView().setBackgroundColor(Color.RED);
 
                 }else{
-                    getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                    getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
 
                 }
             }
