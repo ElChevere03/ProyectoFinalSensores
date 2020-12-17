@@ -8,17 +8,24 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class Option2Activity extends AppCompatActivity {
     SensorManager sensorManager;
     Sensor sensor;
     SensorEventListener sensorEventListener;
+    private View view1;
+    private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option2);
         sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
         sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        view1=findViewById(R.id.view);
+        textView=findViewById(R.id.textDist);
 
         if(sensor==null)
             finish();
@@ -26,11 +33,14 @@ public class Option2Activity extends AppCompatActivity {
         sensorEventListener=new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
+
+                textView.setText(sensorEvent.values[0]+"  Cm");
+
                 if(sensorEvent.values[0]<sensor.getMaximumRange()){
-                    getWindow().getDecorView().setBackgroundColor(Color.GRAY);
+                    view1.setBackgroundColor(Color.RED);
 
                 }else{
-                    getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                    view1.setBackgroundColor(Color.YELLOW);
 
                 }
             }

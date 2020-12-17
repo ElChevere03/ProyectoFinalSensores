@@ -4,8 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".Option2Activity"
     android:padding="25dp"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:text="Sensor de Proximidad"
+        android:textSize="32dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="349dp"
+        android:layout_height="322dp"
+        app:srcCompat="@drawable/imagen" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="349dp"
+        android:layout_height="43dp"
+        android:text="La distancia es: "
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/textDist"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:text="    Cm"
+        android:textSize="32dp"
+
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="106dp"
+        android:layout_height="79dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="90dp"
+        />
 
 </LinearLayout>
